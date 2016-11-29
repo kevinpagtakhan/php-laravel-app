@@ -18,7 +18,7 @@ class CustomerController extends Controller
   }
 
   public function orders($id) {
-    $customer = Customer::find($id);
-    return $customer->orders;
+    $orders = Customer::find($id)->orders;
+    return $orders;
   }
 }
