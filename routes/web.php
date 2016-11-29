@@ -24,3 +24,13 @@ Route::get('/customers/{id}', function($id) {
   $customer = App\Customer::find($id);
   echo $customer;
 });
+
+Route::get('/customers/{id}/orders', function($id) {
+  $customer = App\Customer::find($id);
+  echo $customer->orders;
+});
+
+Route::get('/orders', function() {
+  $orders = App\Order::all();
+  echo $orders;
+});
