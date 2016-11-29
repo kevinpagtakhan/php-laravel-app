@@ -15,22 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/customers', function() {
-  $customers = App\Customer::all();
-  echo $customers;
-});
+Route::get('/customers', 'CustomerController@index');
 
-Route::get('/customers/{id}', function($id) {
-  $customer = App\Customer::find($id);
-  echo $customer;
-});
+Route::get('/customers/{id}', 'CustomerController@show');
 
-Route::get('/customers/{id}/orders', function($id) {
-  $customer = App\Customer::find($id);
-  echo $customer->orders;
-});
+Route::get('/customers/{id}/orders', 'CustomerController@orders');
 
-Route::get('/orders', function() {
-  $orders = App\Order::all();
-  echo $orders;
-});
+Route::get('/orders', 'OrderController@index');
