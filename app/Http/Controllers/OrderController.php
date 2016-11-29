@@ -11,4 +11,9 @@ class OrderController extends Controller
     $orders = Order::all();
     return $orders;
   }
+
+  public function show($id) {
+    $order = Order::find($id);
+    return $order;
+  }
 }

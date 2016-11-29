@@ -22,3 +22,5 @@ Route::get('/customers/{id}', 'CustomerController@show');
 Route::get('/customers/{id}/orders', 'CustomerController@orders');
 
 Route::get('/orders', 'OrderController@index');
+
+Route::get('/orders/{id}', 'OrderController@show');
