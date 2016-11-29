@@ -14,11 +14,11 @@ class CustomerController extends Controller
 
   public function show($id) {
     $customer = Customer::find($id);
-    echo $customer;
+    return $customer;
   }
 
   public function orders($id) {
     $customer = Customer::find($id);
-    echo $customer->orders;
+    return $customer->orders;
   }
 }
