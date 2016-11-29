@@ -14,3 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/customers', function() {
+  $customers = App\Customer::all();
+  echo $customers;
+});
+
+Route::get('/customers/{id}', function($id) {
+  $customer = App\Customer::find($id);
+  echo $customer;
+});
